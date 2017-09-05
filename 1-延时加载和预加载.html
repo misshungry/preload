@@ -426,7 +426,7 @@
 
                 // 创建当前需要显示的图片
                 var current_img = new Image();
-                // 当前.left记录了需要显示图片的src
+                // 当前.right记录了需要显示图片的src
                 current_img.src = $(this).attr('src');
 
                 $(current_img).on('load', function () {
@@ -441,7 +441,7 @@
                 })
 
                 // 获取当前图片索引
-                // 使用$('#bigPhoto .big img').attr('index')获取到的是上一张图片设置的索引。所以需要判断是否为第一张图片，如果为第一张图片，则索引为dl的总个数减1，如果不是，就是原来的index减1
+                // 使用$('#bigPhoto .big img').attr('index')获取到的是上一张图片设置的索引。所以需要判断是否为最后一张图片，如果为最后一张图片，则索引为0，如果不是，就是原来的index加1
                 var current_index = $('#bigPhoto .big img').attr('index') == $('.wait_load').length - 1 ? 0 : parseInt($('#bigPhoto .big img').attr('index')) + 1;
 
                 // 根据获取的索引获取图片
